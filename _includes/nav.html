@@ -8,7 +8,7 @@
         {%if item.external%}
         <a class="link" target="_blank" rel="noopener" href="{{item.url}}">
         {%else%}
-        <a class="link" href="updateRoute(\"{{site.baseurl}}/{{item.url}}\")">
+        <a class="link" onClick="updateRoute({{site.baseurl}}/{{item.url}})">
           {%endif%}
           <div>{{item.title}}</div>
         </a>
@@ -23,7 +23,7 @@
         {%if child.external%}
         <a class="link" target="_blank" rel="noopener" href="{{child.url}}">
         {%else%}
-        <a class="link" onClick="updateRoute(\"{{site.baseurl}}/{{child.url}}\")">
+        <a class="link" onClick="updateRoute({{site.baseurl}}/{{child.url}})">
           {%endif%}
           <div>{{child.title}}</div>
         </a>
@@ -36,7 +36,7 @@
     {%if item.external%}
     <a class="link" target="_blank" rel="noopener" href="{{item.url}}">
     {%else%}
-    <a class="link" href="updateRoute(\"{{site.baseurl}}/{{item.url}}\")">
+    <a class="link" onClick="updateRoute({{site.baseurl}}/{{item.url}})">
       {%endif%}
     <div>{{item.title}}</div></a>
     </a>
