@@ -42,12 +42,16 @@ $(document).ready(function() {
   initializeRoute();
   //On mobile
   $(window).resize(function() {
+    checkMobile();
+  })
+  checkMobile();
+  function checkMobile() {
     isMobile = $('.mobile:visible').length > 0;
     if (isMobile) {
       closeNavigation();
       $('body').removeClass('noscroll');
     }
-  })
+  }
 
   //Toggle the navigation
   function toggleNavigation() {
