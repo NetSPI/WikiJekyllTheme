@@ -10,12 +10,12 @@ html, body {
 
 @font-face {
   font-family: NetSPISegoeBold;
-  src: url(/assets/fonts/segoe-ui-bold.ttf), url(/assets/fonts/segoe-ui-bold.eot?#iefix);
+  src: url("{{site.baseurl}}/assets/fonts/segoe-ui-bold.ttf"), url("{{site.baseurl}}/assets/fonts/segoe-ui-bold.eot?#iefix");
 }
 
 @font-face {
   font-family: NetSPISegoe;
-  src: url(/assets/fonts/segoe-ui.ttf), url(/assets/fonts/segoe-ui.eot?#iefix);
+  src: url("{{site.baseurl}}/assets/fonts/segoe-ui.ttf"), url("{{site.baseurl}}/assets/fonts/segoe-ui.eot?#iefix");
 }
 
 .header {
