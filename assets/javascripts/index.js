@@ -28,7 +28,7 @@ $(document).ready(function() {
     var els = $('.n-navbar li a');
     for (var i = 0; i < els.length; i++) {
       var el = $(els[i])[0];
-      if (el.getAttribute('data-route').startsWith(window.location.pathname)) {
+      if (el.getAttribute('data-route') && el.getAttribute('data-route') == window.location.pathname) {
         $($(el).parent()).addClass('active');
         break;
       }
