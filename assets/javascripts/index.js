@@ -13,6 +13,15 @@ $('.n-nav-icon').click(function() {
   }
 });
 
+//Maybe add handling of identical query params
+function updateRoute(newRoute) {
+  if (newRoute.indexOf('?') > -1) {
+    window.location.href = newRoute + '&' + window.location.search.substring(1, window.location.search.length - 1) //Remove the '?'
+  } else {
+    window.location.href = newRoute + window.location.search;
+  }
+}
+
 //On mobile
 $(window).resize(function() {
   isMobile = $('.mobile:visible').length > 0;
