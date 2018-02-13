@@ -14,26 +14,30 @@
   <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/jquery-ui.min.js"></script>
   <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/index.js"></script>
 </head>
-<div id="contentWrapper">
-  <div id="topBar">
-    <div class="n-nav-icon active open">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div id="logoContainer">
-      <img onClick="window.location.href='{{site.baseurl}}'" src="{{site.baseurl}}/assets/images/logo.png" /><br/>
-    </div>
 
+<body>
+  <div class="mobile"></div>
+  <div id="contentWrapper">
+    <div id="topBar">
+      <div class="n-nav-icon active open">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="logoContainer">
+        <img onClick="window.location.href='{{site.baseurl}}'" src="{{site.baseurl}}/assets/images/logo.png" /><br/>
+      </div>
+
+    </div>
+    <div class="n-navbar active">
+      {% include nav.html %}
+    </div>
+    <div id="contentContainer">
+      {{content}}
+      <div>{%include footer.html%}</div>
+    </div>
   </div>
-  <div class="n-navbar active">
-    {% include nav.html %}
-  </div>
-  <div id="contentContainer">
-    {{content}}
-    <div>{%include footer.html%}</div>
-  </div>
-</div>
+</body>
 
 </html>
