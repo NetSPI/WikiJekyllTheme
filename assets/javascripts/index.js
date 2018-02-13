@@ -25,12 +25,14 @@ $(document).ready(function() {
 
   //Set the active route
   function initializeRoute() {
-    $('.n-navbar li a').each(function(el) {
+    var els = $('.n-navbar li a');
+    for (var i = 0; i < els.length; i++) {
+      var el = $(els[i]);
       if ($(el).getAttribute('data-route').startsWith(window.location.pathname)) {
         $($(el).parent()).addClass('active');
         break;
       }
-    })
+    }
   }
   initializeRoute();
   //On mobile
