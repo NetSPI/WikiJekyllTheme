@@ -1,6 +1,4 @@
----
-layout: default
----
+--- layout: default ---
 <div id="tabs">
   <ul class="nav nav-tabs">
     {%for tab in page.tabs%}
@@ -18,73 +16,76 @@ layout: default
   </div>
 </div>
 <script>
-  var defaultTab = getQueryParameter('tab');
-  var tabIndex = 0;
-  if (!defaultTab) {
-    defaultTab = "{{page.tabs[0].shortName}}";
-  } else {
-    tabIndex = getTabIndex(defaultTab);
-  }
-  $($('#tabs ul li a')[tabIndex]).addClass('active')
-  $("#tabs").tabs({
-    active: tabIndex
-  });
-
-  function getQueryParameter(key) {
-    key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
-    var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
-    return match && decodeURIComponent(match[1].replace(/\+/g, " "));
-  }
-  //Update the tab type
-  //Have an option to not update the url
-  function updateTab(tab, ignoreURL) {
-    if (!tab) {
-      tab = getQueryParameter('tab');
-      if (!tab) {
-        tab=defaultTab
-      }
-    };
-    $('#tabs ul li a').removeClass('active')
-    $('#tabs ul li a[href="#' + tab + '"]').addClass('active')
+  $(document).ready(function() {
+    var defaultTab = getQueryParameter('tab');
+    var tabIndex = 0;
+    if (!defaultTab) {
+      defaultTab = "{{page.tabs[0].shortName}}";
+    } else {
+      tabIndex = getTabIndex(defaultTab);
+    }
+    $($('#tabs ul li a')[tabIndex]).addClass('active')
     $("#tabs").tabs({
-      active: getTabIndex(tab)
+      active: tabIndex
     });
-    !ignoreURL && updateQueryStringParameter('tab', tab);
-  }
-  function getTabIndex(tab) {
-    var tabs = $('#tabs ul li a');
-    for (var i = 0; i < tabs.length; i++) {
-      if (tabs[i].getAttribute('href') == "#" + tab) {
-        return i;
-      }
+
+    function getQueryParameter(key) {
+      key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+      var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
+      return match && decodeURIComponent(match[1].replace(/\+/g, " "));
     }
-  }
-  //Update a query string paramter in the url
-  function updateQueryStringParameter(key, value) {
-    var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-    var uri = window.location.search;
-    var separator = uri.indexOf('?') !== -1 ?
-      "&" :
-      "?";
-    var newPath;
-    if (uri.match(re)) {
-      newPath = uri.replace(re, '$1' + key + "=" + value + '$2')
-    } else {
-      newPath = uri + separator + key + "=" + value
-    }
-    if (history.pushState) {
-      var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + newPath;
-      window.history.pushState({
-        path: newurl
-      }, '', newurl);
-    } else {
-      window.location.search = newPath
+    //Update the tab type
+    //Have an option to not update the url
+    function updateTab(tab, ignoreURL) {
+      if (!tab) {
+        tab = getQueryParameter('tab');
+        if (!tab) {
+          tab = defaultTab
+        }
+      };
+      $('#tabs ul li a').removeClass('active')
+      $('#tabs ul li a[href="#' + tab + '"]').addClass('active')
+      $("#tabs").tabs({
+        active: getTabIndex(tab)
+      });
+      !ignoreURL && updateQueryStringParameter('tab', tab);
     }
 
-    //On forward/back buttons refresh everything
-    $(window).on("popstate", function(e) {
-      updateTab(null,true);
-      $('.nav-link').blur(); //Just weird bootstrap ui bug
-    });
-  }
+    function getTabIndex(tab) {
+      var tabs = $('#tabs ul li a');
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i].getAttribute('href') == "#" + tab) {
+          return i;
+        }
+      }
+    }
+    //Update a query string paramter in the url
+    function updateQueryStringParameter(key, value) {
+      var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+      var uri = window.location.search;
+      var separator = uri.indexOf('?') !== -1 ?
+        "&" :
+        "?";
+      var newPath;
+      if (uri.match(re)) {
+        newPath = uri.replace(re, '$1' + key + "=" + value + '$2')
+      } else {
+        newPath = uri + separator + key + "=" + value
+      }
+      if (history.pushState) {
+        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + newPath;
+        window.history.pushState({
+          path: newurl
+        }, '', newurl);
+      } else {
+        window.location.search = newPath
+      }
+
+      //On forward/back buttons refresh everything
+      $(window).on("popstate", function(e) {
+        updateTab(null, true);
+        $('.nav-link').blur(); //Just weird bootstrap ui bug
+      });
+    }
+  })
 </script>
