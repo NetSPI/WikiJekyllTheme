@@ -22,7 +22,12 @@ $NetSPIRed: #cf0a2c;
   padding-top: 20px;
 }
 .n-navbar.no-transition {
-  transition-property: none;
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+.n-navbar.no-transition * {
+  transition: none !important;
+  -webkit-transition: none !important;
 }
 #topBar {
   background: white;
