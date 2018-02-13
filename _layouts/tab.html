@@ -15,7 +15,7 @@ layout: default
   </ul>
   <div id="injectionTabContent" class="tab-content">
     {%for tab in page.tabs%}
-    <div role="tabpanel" class="tab-pane active" id="{{tab.shortName}}">
+    <div role="tabpanel" class="tab-pane" id="{{tab.shortName}}">
       {%include_relative {{tab.fileName}}%}
     </div>
     {%endfor%}
@@ -31,7 +31,6 @@ layout: default
     } else {
       tabIndex = getTabIndex(defaultTab);
     }
-    $($('#tabs ul li a')[tabIndex]).addClass('active')
     $("#tabs").tabs({
       active: tabIndex
     });
