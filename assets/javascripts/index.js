@@ -15,7 +15,7 @@ $(document).ready(function() {
   });
 
   //Maybe add handling of identical query params
-  function updateRoute(newRoute) {
+  window.updateRoute = function(newRoute) {
     if (newRoute.indexOf('?') > -1) {
       window.location.href = newRoute + '&' + window.location.search.substring(1, window.location.search.length - 1) //Remove the '?'
     } else {
