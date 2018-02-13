@@ -45,6 +45,7 @@ layout: default
     //Have an option to not update the url
     //Make it global
     window.updateTab = function(tab, queryParam, ignoreURL) {
+      debugger;
       if (!tab) {
         tab = getQueryParameter(defaultQueryParam);
         if (!tab) {
@@ -91,7 +92,7 @@ layout: default
 
       //On forward/back buttons refresh everything
       $(window).on("popstate", function(e) {
-        updateTab(null, true);
+        updateTab(null, defaultQueryParam, true);
         $('.nav-link').blur(); //Just weird bootstrap ui bug
       });
     }
