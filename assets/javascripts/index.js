@@ -30,8 +30,8 @@ $(document).ready(function() {
       var el = $(els[i])[0];
       if (el.getAttribute('data-route')) {
         //Normalize the route ending
-        var route = el.getAttribute('data-route').replace('/\/$/', '');
-        var pathname = window.location.pathname.replace('/\/$/', '');
+        var route = el.getAttribute('data-route').replace(/\/$/, '');
+        var pathname = window.location.pathname.replace(/\/$/, '');
         if (route === pathname) {
           $($(el).parent()).addClass('active');
           break;
