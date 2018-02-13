@@ -8,7 +8,8 @@ layout: default
       {%if tab.updateQuery%}
       <a class="nav-link" onClick="updateTab('{{tab.shortName}}')" href="#{{tab.shortName}}">{{tab.title}}</a>
       {%else%}
-      <a class="nav-link" href="#{{tab.shortName}}">{{tab.title}}</a>
+      {{tab|jsonify}}
+      <a class="nav-link" onClick="updateTab('{{tab.shortName}}', true)" href="#{{tab.shortName}}">{{tab.title}}</a>
       {%endif%}
     </li>
     {%endfor%}
@@ -44,8 +45,7 @@ layout: default
     //Update the tab type
     //Have an option to not update the url
     //Make it global
-    window.updateTab = function(tab, queryParam, ignoreURL) {
-      debugger;
+    window.updateTab = function(tab, ignoreURL) {
       if (!tab) {
         tab = getQueryParameter(defaultQueryParam);
         if (!tab) {
@@ -92,7 +92,7 @@ layout: default
 
       //On forward/back buttons refresh everything
       $(window).on("popstate", function(e) {
-        updateTab(null, defaultQueryParam, true);
+        updateTab(null, true);
         $('.nav-link').blur(); //Just weird bootstrap ui bug
       });
     }
