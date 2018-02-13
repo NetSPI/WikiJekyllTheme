@@ -28,10 +28,10 @@ $(document).ready(function() {
     var els = $('.n-navbar li a');
     for (var i = 0; i < els.length; i++) {
       var el = $(els[i])[0];
-      if (el.getAttribute('data-route') {
-        var route = el.getAttribute('data-route').replace('/\/$/');
-        var pathname = window.location.pathname.replace('/\/$/');
-
+      if (el.getAttribute('data-route')) {
+        //Normalize the route ending
+        var route = el.getAttribute('data-route').replace('/\/$/','');
+        var pathname = window.location.pathname.replace('/\/$/','');
         $($(el).parent()).addClass('active');
         break;
       }
