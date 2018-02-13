@@ -5,10 +5,9 @@ layout: default
   <ul class="nav nav-tabs">
     {%for tab in page.tabs%}
     <li class="nav-item">
-      {%if tab.updateQuery%}
+      {%if page.updateQuery%}
       <a class="nav-link" onClick="updateTab('{{tab.shortName}}')" href="#{{tab.shortName}}">{{tab.title}}</a>
       {%else%}
-      {{tab|jsonify}}
       <a class="nav-link" onClick="updateTab('{{tab.shortName}}', true)" href="#{{tab.shortName}}">{{tab.title}}</a>
       {%endif%}
     </li>
