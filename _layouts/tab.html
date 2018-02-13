@@ -38,7 +38,8 @@ layout: default
     }
     //Update the tab type
     //Have an option to not update the url
-    function updateTab(tab, ignoreURL) {
+    //Make it global
+    window.updateTab = function(tab, ignoreURL) {
       if (!tab) {
         tab = getQueryParameter('tab');
         if (!tab) {
