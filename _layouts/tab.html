@@ -31,6 +31,7 @@ layout: default
     } else {
       tabIndex = getTabIndex(defaultTab);
     }
+    $($('#tabs ul li a')[tabIndex]).addClass('active')
     $("#tabs").tabs({
       active: tabIndex
     });
