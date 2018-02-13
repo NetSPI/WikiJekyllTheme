@@ -23,6 +23,16 @@ $(document).ready(function() {
     }
   }
 
+  //Set the active route
+  function initializeRoute() {
+    $('.n-navbar li a').each(function(el) {
+      if ($(el).getAttribute('data-route').startsWith(window.location.pathname)) {
+        $($(el).parent()).addClass('active');
+        break;
+      }
+    })
+  }
+  initializeRoute();
   //On mobile
   $(window).resize(function() {
     isMobile = $('.mobile:visible').length > 0;

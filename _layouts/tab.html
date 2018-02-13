@@ -5,7 +5,11 @@ layout: default
   <ul class="nav nav-tabs">
     {%for tab in page.tabs%}
     <li class="nav-item">
+      {if tab.updateQuery}
       <a class="nav-link" onClick="updateTab('{{tab.shortName}}')" href="#{{tab.shortName}}" role="tab" data-toggle="tab">{{tab.title}}</a>
+      {%else%}
+      <a class="nav-link" href="#{{tab.shortName}}" role="tab" data-toggle="tab">{{tab.title}}</a>
+      {%endif%}
     </li>
     {%endfor%}
   </ul>
@@ -19,7 +23,8 @@ layout: default
 </div>
 <script>
   $(document).ready(function() {
-    var defaultTab = getQueryParameter('tab');
+    var defaultQueryParam = '{{page.queryParam}}'
+    var defaultTab = getQueryParameter(defaultQueryParam);
     var tabIndex = 0;
     if (!defaultTab) {
       defaultTab = "{{page.tabs[0].shortName}}";
@@ -39,9 +44,9 @@ layout: default
     //Update the tab type
     //Have an option to not update the url
     //Make it global
-    window.updateTab = function(tab, ignoreURL) {
+    window.updateTab = function(tab, queryParam, ignoreURL) {
       if (!tab) {
-        tab = getQueryParameter('tab');
+        tab = getQueryParameter(defaultQueryParam);
         if (!tab) {
           tab = defaultTab
         }
@@ -51,7 +56,7 @@ layout: default
       $("#tabs").tabs({
         active: getTabIndex(tab)
       });
-      !ignoreURL && updateQueryStringParameter('tab', tab);
+      !ignoreURL && updateQueryStringParameter(defaultQueryParam, tab);
     }
 
     function getTabIndex(tab) {
