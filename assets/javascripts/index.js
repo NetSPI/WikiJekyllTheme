@@ -47,7 +47,7 @@ $(document).ready(function() {
   }
   //If we're on mobile don't open the nav on default
   if (getCookie('nav') == "false" || isMobile) {
-    closeNavigation();
+    closeNavigation(true);
   }
 
   //Toggle the navigation
@@ -61,11 +61,22 @@ $(document).ready(function() {
   }
 
   //Close the navigation
-  function closeNavigation() {
-    $('.n-nav-icon').removeClass('open');
-    $('.n-nav-icon').removeClass('active');
-    $(".n-navbar").removeClass('active');
-    $('body').removeClass('noscroll');
+  function closeNavigation(fast) {
+    if (fast) {
+      $('.n-nav-icon').removeClass('open');
+      $('.n-nav-icon').removeClass('active');
+      $(".n-navbar").addClass('no-transition');
+      $(".n-navbar").removeClass('active');
+      setTimeout(function() {
+        $(".n-navbar").removeClass('no-transition');
+      }, 100)
+      $('body').removeClass('noscroll');
+    } else {
+      $('.n-nav-icon').removeClass('open');
+      $('.n-nav-icon').removeClass('active');
+      $(".n-navbar").removeClass('active');
+      $('body').removeClass('noscroll');
+    }
   }
   //Open the navigation
   function openNavigation() {
