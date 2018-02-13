@@ -36,7 +36,8 @@ layout: default
     return match && decodeURIComponent(match[1].replace(/\+/g, " "));
   }
   //Update the tab type
-  function updateTab(tab, updateURL) {
+  //Have an option to not update the url
+  function updateTab(tab, ignoreURL) {
     if (!tab) {
       tab = getQueryParameter('tab');
       if (!tab) {
@@ -48,7 +49,7 @@ layout: default
     $("#tabs").tabs({
       active: getTabIndex(tab)
     });
-    updateURL && updateQueryStringParameter('tab', tab);
+    !ignoreURL && updateQueryStringParameter('tab', tab);
   }
   function getTabIndex(tab) {
     var tabs = $('#tabs ul li a');
@@ -82,7 +83,7 @@ layout: default
 
     //On forward/back buttons refresh everything
     $(window).on("popstate", function(e) {
-      updateTab(null,false);
+      updateTab(null,true);
       $('.nav-link').blur(); //Just weird bootstrap ui bug
     });
   }
