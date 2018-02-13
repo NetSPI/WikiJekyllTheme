@@ -62,16 +62,14 @@ $(document).ready(function() {
   //Close the navigation
   function closeNavigation(fast) {
     if (fast) {
+      //A little overboard, but we have a lot of transitional elements
+      // that look weird if this snaps and they don't
+      $('*').addClass('no-transition');
       $('.n-nav-icon').removeClass('open');
       $('.n-nav-icon').removeClass('active');
-      $(".n-nav-icon").addClass('no-transition');
-      $(".n-navbar").addClass('no-transition');
-      $("#contentContainer").addClass('no-transition');
       $(".n-navbar").removeClass('active');
       setTimeout(function() {
-        $(".n-nav-icon").removeClass('no-transition');
-        $(".n-navbar").removeClass('no-transition');
-        $('#contentContainer').removeClass('no-transition')
+        $('*').removeClass('no-transition');
       }, 100)
       $('body').removeClass('noscroll');
     } else {
@@ -84,16 +82,14 @@ $(document).ready(function() {
   //Open the navigation
   function openNavigation(fast) {
     if (fast) {
-      $('.n-nav-icon').addClass('no-transition');
-      $("#contentContainer").addClass('no-transition');
-      $(".n-navbar").addClass('no-transition');
+      //A little overboard, but we have a lot of transitional elements
+      // that look weird if this snaps and they don't
+      $('*').addClass('no-transition');
       $('.n-nav-icon').addClass('open');
       $('.n-nav-icon').addClass('active');
       $('.n-navbar').addClass('active');
       setTimeout(function() {
-        $('.n-nav-icon').removeClass('no-transition');
-        $(".n-navbar").removeClass('no-transition');
-        $('#contentContainer').removeClass('no-transition')
+        $('*').removeClass('no-transition');
       }, 100)
     } else {
       $('.n-nav-icon').addClass('open');
