@@ -1,0 +1,48 @@
+<ul>
+  {% for item in site.data.nav%}
+  {%if item.children%}
+  <li>
+    <ul id="injectionTypes">
+      {%if item.url%}
+      <li class="n-nav-item n-top-nav-item">
+        {%if item.external%}
+        <a class="link" target="_blank" rel="noopener" href="{{item.url}}">
+        {%else%}
+        <a class="link" href="{{item.url}}">
+          {%endif%}
+          <div>{{item.title}}</div>
+        </a>
+      </li>
+      {%else%}
+      <li class="n-nav-item n-top-nav-item">
+          <div>{{item.title}}</div>
+      </li>
+      {%endif%}
+      {% for child in item.children %}
+      <li class="n-nav-item">
+        {%if child.external%}
+        <a class="link" target="_blank" rel="noopener" href="{{child.url}}">
+        {%else%}
+        <a class="link" href="{{child.url}}">
+          {%endif%}
+          <div>{{child.title}}</div>
+        </a>
+      </li>
+      {%endfor%}
+    </ul>
+  </li>
+  {%elsif item.url%}
+  <li class="n-nav-item n-top-nav-item">
+    {%if item.external%}
+    <a class="link" target="_blank" rel="noopener" href="{{item.url}}">
+    {%else%}
+    <a class="link" href="{{item.url}}">
+      {%endif%}
+    <div>{{item.title}}</div></a>
+    </a>
+  </li>
+  {%else%}
+  <li class="n-nav-item n-top-nav-item">
+    <div>{{item.title}}</div>
+  </li> {%endif%} {%endfor%}
+</ul>

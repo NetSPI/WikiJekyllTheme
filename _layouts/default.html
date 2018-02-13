@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <title>NetSPI Wiki</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/scss/index.css" />
+  <link rel="stylesheet" href="/assets/scss/nav.css" />
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script> -->
+  <script src="/assets/javascripts/index.js"></script>
+</head>
+<div id="contentWrapper">
+  <div id="topBar">
+    <div class="n-nav-icon active open">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="logoContainer">
+      <img onClick="updateRoute('/')" src="/assets/images/logoOnly.png" /><br/>
+    </div>
+
+  </div>
+  <div class="n-navbar active">
+    {% include nav.html %}
+  </div>
+  <div id="contentContainer">
+    {{content}}
+    <div>{%include footer.html%}</div>
+  </div>
+</div>
+
+</html>
