@@ -23,7 +23,7 @@
         {%if child.external%}
         <a class="link" target="_blank" rel="noopener" href="{{child.url}}">
         {%else%}
-        <a class="link" data-route="{{site.baseurl}}{{item.url}}" onClick="updateRoute('{{site.baseurl}}{{child.url}}')">
+        <a class="link" data-route="{{site.baseurl}}{{item.url}}{{child.url}}" onClick="updateRoute('{{site.baseurl}}{{child.url}}')">
           {%endif%}
           <div>{{child.title}}</div>
         </a>
