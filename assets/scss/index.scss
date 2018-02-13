@@ -170,14 +170,6 @@ a {
   margin-left: auto;
 }
 
-#contentContainer.no-transition {
-  transition: none !important;
-  -webkit-transition: none !important;
-}
-#contentContainer.no-transition * {
-  transition: none !important;
-  -webkit-transition: none !important;
-}
 .tab-content {
   padding-top: 20px;
 }
