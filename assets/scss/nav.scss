@@ -89,8 +89,8 @@ $NetSPIRed: #cf0a2c;
 
 .n-navbar .n-nav-item {
   margin-left: -300px;
-  -webkit-transition: margin-left .5s ease, padding-left .5s ease, background-color .25s ease;
-  transition: margin-left .5s ease, padding-left .5s ease, background-color .25s ease;
+  -webkit-transition: margin-left .5s ease, padding-left .5s ease;
+  transition: margin-left .5s ease, padding-left .5s ease;
   padding-left: 25px;
   width: 275px;
 }
