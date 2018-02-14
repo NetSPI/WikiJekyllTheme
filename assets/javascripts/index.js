@@ -50,6 +50,8 @@ $(document).ready(function() {
     if (isMobile) {
       closeNavigation();
       $('body').removeClass('noscroll');
+    } else {
+      openNavigation();
     }
   }
 

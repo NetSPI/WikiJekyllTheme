@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="{{site.baseurl}}/assets/images/favicon.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/bootstrap.min.css">
   <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/index.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/nav.css" />
   <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
   <div class="mobile"></div>
   <div id="contentWrapper">
     <div id="topBar">
-      <div class="n-nav-icon active open">
+      <div class="n-nav-icon">
         <span></span>
         <span></span>
         <span></span>
@@ -28,9 +28,30 @@
       <div id="logoContainer">
         <img onClick="window.location.href='{{site.baseurl}}'" src="{{site.baseurl}}/assets/images/logo.png" /><br/>
       </div>
-
     </div>
-    <div class="n-navbar active">
+    <div class="n-navbar">
+      <script>
+        //So this isn't my favorite solution. If we rewrite CSS this should be taken out.
+        //The issue is that nav defaults to open, and on mobile open takes the entire screen.
+        //So if we're on mobile we want it to default to closed. What we do here is check if
+        //it's mobile, and if it's not, we activate and open the nav components, then add the animation property after.
+        //If the animate property was there to start the user would see the ~250ms animation to open/close the nav elements.
+        //In the future I'd like to create a CSS class "default" and have the media query invert the parameters on mobile,
+        //so default keeps everything closed on mobile, but open on desktop. Then we don't need JS
+        //The contributor who fixes this gets a free pizza from me.
+        if (!document.getElementsByClassName('mobile')[0].offsetParent) {
+          document.getElementsByClassName('n-navbar')[0].classList.add('active');
+          document.getElementsByClassName('n-nav-icon')[0].classList.add('open');
+          document.getElementsByClassName('n-nav-icon')[0].classList.add('active');
+          setTimeout(function() {
+            document.getElementsByClassName('n-navbar')[0].classList.add('animate');
+            document.getElementsByClassName('n-nav-icon')[0].classList.add('animate');
+          }, 250)
+        } else {
+          document.getElementsByClassName('n-navbar')[0].classList.add('animate');
+          document.getElementsByClassName('n-nav-icon')[0].classList.add('animate');
+        }
+      </script>
       {% include nav.html %}
     </div>
     <div id="contentContainer">

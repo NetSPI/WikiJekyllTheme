@@ -1,0 +1,16 @@
+- title: Home
+  url: /
+- title: About Us
+  url: https://netspi.com
+  external: true
+- title: DBMS Identification
+  url: /dbmsIdentification
+- title: Injection Techniques
+  url: /injectionTechniques
+  children:
+    - title: Conditional Statements
+      url: /injectionTechniques/conditionalStatements
+    - title: Injection Placement
+      url: /injectionTechniques/injectionPlacement
+    - title: Injection Obfuscation
+      url: /injectionTechniques/obfuscation
