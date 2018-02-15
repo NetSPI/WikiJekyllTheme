@@ -126,10 +126,6 @@ $mobileWidth: 700px;
     background: rgba(207, 10, 44, 1);
   }
 
-  & .nav-link {
-    color: #CE112D;
-  }
-
   & .nav-link:hover {
     color: #3d3935;
   }
@@ -152,7 +148,9 @@ $mobileWidth: 700px;
     color: #929191;
   }
 }
-
+.nav-link {
+  color: #CE112D;
+}
 #topBar {
   background: white;
   padding: 10px;
