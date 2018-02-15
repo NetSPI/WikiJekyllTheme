@@ -11,6 +11,17 @@ To edit existing content in a wiki, navigate to the page you would like to edit 
 ### Example
 If you want to edit `https://sqlwiki.netspi.com/attackQueries/persistence`, you would navigate to `https://github.com/[YOUR_USERNAME]/SQLInjectionWiki/attackQueries/persistence.html` and make your changes in that file.
 
+## Style
+
+Follow the styles already set in the existing files if not listed below.
+
+- All tables should have classes of `table table-striped table-hover`
+- All code snippets should be wrapped in `<code></code>`
+- All top headers should be `<h3></h3>`
+- All sub section headers should be `<h4 class="subheading"></h4>`
+- Top level descriptions should be `<p class="readableText"></p>`
+- Secondary descriptions should just be `<p></p>`
+
 ## Adding a new section
 To add a new page or section place it in the appropriate location. Top level sections should go in the root of the directory, sections with no children should have a .html file in the root directory (unless utilizing some themes), and children of a section should go under the parent directory.
 
