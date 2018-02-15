@@ -4,13 +4,13 @@
   url: https://netspi.com
   external: true
 - title: DBMS Identification
-  url: /dbmsIdentification
+  url: /dbmsIdentification/
 - title: Injection Techniques
-  url: /injectionTechniques
+  url: /injectionTechniques/
   children:
     - title: Conditional Statements
-      url: /injectionTechniques/conditionalStatements
+      url: /injectionTechniques/conditionalStatements/
     - title: Injection Placement
-      url: /injectionTechniques/injectionPlacement
+      url: /injectionTechniques/injectionPlacement/
     - title: Injection Obfuscation
-      url: /injectionTechniques/obfuscation
+      url: /injectionTechniques/obfuscation/

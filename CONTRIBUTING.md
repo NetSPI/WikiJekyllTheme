@@ -26,3 +26,7 @@ Follow the styles already set in the existing files if not listed below.
 To add a new page or section place it in the appropriate location. Top level sections should go in the root of the directory, sections with no children should have a .html file in the root directory (unless utilizing some themes), and children of a section should go under the parent directory.
 
 After adding a new section, modify the \_data/nav.yml file and add the section in its proper place. There should only be 3 navigation types as stated above.
+
+## Navigation Rules
+When setting the URL for a file, don't use a trailing backslash and leave out the html. Example: "/detection" for detection.html in the root directory.
+Use the backslash when referring to a directory with an index.html file inside of it. Example: "/identification/" from /identification/index.html.
