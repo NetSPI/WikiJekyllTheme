@@ -5,47 +5,49 @@
   flex-wrap: wrap;
   width: 100%;
 }
+
 .tabInput {
   position: absolute;
-  top:0px;
-  left:0px;
+  top: 0;
+  left: 0;
   opacity: 0;
 }
+
 .tabLabel {
-  width: 100%;
+  width: auto;
   color: #CE112D;
   font-weight: normal;
   cursor: pointer;
   border-bottom: 1px solid transparent;
-  margin-left: .2rem;
-  padding: .75em 1em;
+  margin-left: 0.2rem;
+  padding: 0.75em 1em;
+  order: 1;
   font-size: 17px;
-  border-radius: .25rem .25rem 0 0;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
-.tabLabel:focus {outline:0;}
-.tabInput:target + .tabLabel {
+
+.tabLabel:focus {
+  outline: 0;
+}
+
+.tabInput:target + .tabLabel,
+.tabInput:checked + .tabLabel {
   background: white;
   border-bottom-color: #ccc;
   color: #55595c;
 }
+
 .tabLabel:hover {
   border-color: #eceeef #eceeef #ddd;
-}
-@media (min-width: 600px) {
-  .tabLabel {
-    width: auto;
-  }
 }
 .tabPanel {
   display: none;
   width: 100%;
+  order: 99;
 }
-@media (min-width: 600px) {
-  .tabPanel {
-    order: 99;
-  }
-}
-.tabInput:target + .tabLabel + .tabPanel {
+
+.tabInput:target + .tabLabel + .tabPanel,
+.tabInput:checked + .tabLabel + .tabPanel {
   display: block;
 }
 

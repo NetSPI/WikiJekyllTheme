@@ -13,13 +13,7 @@ $(document).ready(function() {
     updateTab(null, true);
   });
 
-  //Since we track tabs with the #
-  $('a').click(function(event) {
-    event.preventDefault();
-    if (/^(https?:)?\/\//.test(event.currentTarget.pathname)) { //If it's not a relative link, go away
-      window.location = event.currentTarget.pathname;
-    } else {
-      window.location = event.currentTarget.pathname + window.location.hash;
-    }
-  })
+  if (!window.location.hash) {
+    window.location.hash = $(".tabs .tabInput")[0].id;
+  }
 })
