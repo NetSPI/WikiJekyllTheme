@@ -1,5 +1,6 @@
 ---
 ---
+$mobileWidth: 700px;
 html, body {
   font-family: "NetSPISegoe";
   font-weight: 400;
@@ -22,6 +23,30 @@ html, body {
   text-align: center;
 }
 
+.noscroll {
+  overflow: hidden;
+}
+
+
+.link:hover {
+  text-decoration: underline;
+}
+
+li {
+  list-style-type: none;
+}
+
+.mobile {
+  display: none;
+  height: 0;
+  width: 0;
+
+  @media (max-width: $mobileWidth) {
+    & {
+      display: block !important;
+    }
+  }
+}
 code {
   color: black;
   font-family: monospace;
@@ -253,7 +278,7 @@ tr:hover .showMore {
   text-decoration: underline;
 }
 
-@media (max-width: 700px) {
+@media (max-width: $mobileWidth) {
   #contentContainer {
     font-size: 15px;
   }

@@ -57,22 +57,30 @@ $(document).ready(function() {
 
   //Toggle the navigation
   function toggleNavigation() {
-    $('.n-nav-icon').toggleClass('open');
-    $('.n-nav-icon').toggleClass('active');
-    $(".n-navbar").toggleClass('active');
+    $('.n-nav-icon').toggleClass('default');
+    $(".n-navbar").toggleClass('default');
   }
 
   //Close the navigation
   function closeNavigation() {
-    $('.n-nav-icon').removeClass('open');
-    $('.n-nav-icon').removeClass('active');
-    $(".n-navbar").removeClass('active');
+    if (isMobile) {
+      $('.n-nav-icon').addClass('default');
+      $(".n-navbar").addClass('default');
+    } else {
+      $('.n-nav-icon').removeClass('default');
+      $(".n-navbar").removeClass('default');
+    }
     $('body').removeClass('noscroll');
   }
   //Open the navigation
   function openNavigation() {
-    $('.n-nav-icon').addClass('open');
-    $('.n-nav-icon').addClass('active');
-    $('.n-navbar').addClass('active');
+    if (isMobile) {
+      $('.n-nav-icon').removeClass('default');
+      $(".n-navbar").removeClass('default');
+    } else {
+      $('.n-nav-icon').addClass('default');
+      $(".n-navbar").addClass('default');
+    }
+    $('body').removeClass('noscroll');
   }
 })
