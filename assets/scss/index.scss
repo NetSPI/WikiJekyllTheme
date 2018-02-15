@@ -2,7 +2,7 @@
 ---
 $mobileWidth: 700px;
 html, body {
-  font-family: "NetSPISegoe", "Open Sans";
+  font-family: "ProximaNova", "Open Sans";
   font-weight: 400;
   min-height: 100%;
   background: white;
@@ -10,13 +10,23 @@ html, body {
 }
 
 @font-face {
-  font-family: NetSPISegoeBold;
-  src: url("{{site.baseurl}}/assets/fonts/segoe-ui-bold.ttf"), url("{{site.baseurl}}/assets/fonts/segoe-ui-bold.eot?#iefix");
+font-family:"ProximaNova";
+src:url("https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-style:normal;font-weight:700;
 }
+
 @font-face {
-  font-family: NetSPISegoe;
-  src: url("{{site.baseurl}}/assets/fonts/segoe-ui.ttf"), url("{{site.baseurl}}/assets/fonts/segoe-ui.eot?#iefix");
+font-family:"ProximaNova";
+src:url("https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
 }
+
+@font-face {
+font-family:"ProximaNova";
+src:url("https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-style:italic;font-weight:400;
+}
+
 
 .header {
   text-align: center;
