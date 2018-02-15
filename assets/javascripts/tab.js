@@ -10,6 +10,7 @@ $(document).ready(function() {
 
   //On forward/back buttons refresh everything
   $(window).on("popstate", function(e) {
+    $('#tabs .tabInput').attr('checked',false);
     updateTab(null, true);
   });
 
