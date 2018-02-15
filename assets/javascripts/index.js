@@ -75,18 +75,19 @@ $(document).ready(function() {
     $('body').removeClass('noscroll');
   }
 
-    //Since we track tabs with the #
-    //This is only needed on websites that use tabs
-    //But if we only include it in tab.js any page without tabs on that website
-    //will remove the hash.
-    $('a').click(function(event) {
-      event.preventDefault();
-      debugger;
-      var href = event.currentTarget.getAttribute('href');
-      if (/^(https?:)?\/\//.test(href)) { //If it's not a relative link, go away
-        window.location = href;
-      } else {
-        window.location = href + window.location.hash;
-      }
-    })
+  //Since we track tabs with the #
+  //This is only needed on websites that use tabs
+  //But if we only include it in tab.js any page without tabs on that website
+  //will remove the hash.
+  $('a').click(function(event) {
+    event.preventDefault();
+    debugger;
+    var href = event.currentTarget.getAttribute('href');
+    if (/^(https?:)?\/\//.test(href)) { //If it's not a relative link, go away
+      var win = window.open(href, '_blank'); //Open external links in new tab
+      win.focus();
+    } else {
+      window.location = href + window.location.hash;
+    }
+  })
 })
