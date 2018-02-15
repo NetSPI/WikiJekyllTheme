@@ -1,11 +1,9 @@
 $(document).ready(function() {
-  var isMobile = $('.mobile:visible').length > 0;
-
   //When the navigation hamburger, or X, is clicked open/close it.
   $('.n-nav-icon').click(function() {
     toggleNavigation();
     //Hide the scroll from the main content, so it doesn't affect the full nav on mobile
-    if (isMobile) {
+    if (isMobile()) {
       if ($('.n-navbar').hasClass('active')) {
         $('body').addClass('noscroll');
       } else {
@@ -31,19 +29,8 @@ $(document).ready(function() {
     }
   }
   initializeRoute();
-  //On mobile
-  $(window).resize(function() {
-    checkMobile();
-  })
-  checkMobile();
-  function checkMobile() {
-    isMobile = $('.mobile:visible').length > 0;
-    if (isMobile) {
-      closeNavigation();
-      $('body').removeClass('noscroll');
-    } else {
-      openNavigation();
-    }
+  function isMobile() {
+    return $('.mobile:visible').length > 0;
   }
 
   //Toggle the navigation
@@ -54,7 +41,7 @@ $(document).ready(function() {
 
   //Close the navigation
   function closeNavigation() {
-    if (isMobile) {
+    if (isMobile()) {
       $('.n-nav-icon').addClass('default');
       $(".n-navbar").addClass('default');
     } else {
@@ -65,7 +52,7 @@ $(document).ready(function() {
   }
   //Open the navigation
   function openNavigation() {
-    if (isMobile) {
+    if (isMobile()) {
       $('.n-nav-icon').removeClass('default');
       $(".n-navbar").removeClass('default');
     } else {
