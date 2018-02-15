@@ -8,7 +8,7 @@ To start contributing, fork the repository and make your changes. After you are 
 ## Editing Content
 To edit existing content in a wiki, navigate to the page you would like to edit on the website. Look at the URL and match that to the directory structure of the repo.
 
-###Example
+### Example
 If you want to edit `https://sqlwiki.netspi.com/attackQueries/persistence`, you would navigate to 'https://github.com/NetSPI/SQLInjectionWiki/attackQueries/persistence.html' and make your changes in that file.
 
 ## Adding a new section
