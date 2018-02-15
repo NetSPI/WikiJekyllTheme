@@ -5,17 +5,17 @@
   <meta name="theme-color" content="#ffffff">
   <meta charset="utf-8">
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{site.data.title}}" />
-  <meta property="og:description" content="{{site.data.description}}" />
-  <meta property="og:image" content="{{site.data.baseurl}}{{site.data.ogImageLink}}" />
-  <meta name="twitter:title" content="{{site.data.title}}" />
-  <meta name="twitter:description" content="{{site.data.description}}" />
+  <meta property="og:title" content="{{site.data.metadata.title}}" />
+  <meta property="og:description" content="{{site.data.metadata.description}}" />
+  <meta property="og:image" content="{{site.baseurl}}{{site.data.metadata.ogImageLink}}" />
+  <meta name="twitter:title" content="{{site.data.metadata.title}}" />
+  <meta name="twitter:description" content="{{site.data.metadata.description}}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{{site.baseurl}}{{site.data.twitterImageLink}}">
+  <meta name="twitter:image" content="{{site.baseurl}}{{site.data.metadata.twitterImageLink}}">
   <meta name="twitter:site" content="@netspi" />
   <meta name="twitter:creator" content="@netspi" />
-  <meta name="description" content="{{site.data.description}}">
-  <meta name="keywords" content="{{site.data.keywords}}">
+  <meta name="description" content="{{site.data.metadata.description}}">
+  <meta name="keywords" content="{{site.data.metadata.keywords}}">
   <link rel="author" href="https://netspi.com" />
   <!--Chrome likes to get angry and say these preloads aren't used. Ignore those warnings-->
   <link rel="preload" href="{{site.baseurl}}/assets/fonts/segoe-ui.ttf" type="font/ttf" as="font">
@@ -25,8 +25,8 @@
   <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/bootstrap.min.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/index.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/nav.css" />
-  <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/jquery-2.2.4.min.js" async crossorigin="anonymous"></script>
-  <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/jquery-ui.min.js" async></script>
+  <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/jquery-ui.min.js"></script>
   <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/index.js"></script>
   <script>
     (function(w, d, s, l, i) {
