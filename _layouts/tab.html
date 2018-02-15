@@ -4,23 +4,10 @@ customJS: tab.js
 ---
 <div id="tabs" class="tabs">
 {%for tab in page.tabs%}
-{%if forloop.index==1%}
-  <input class="input" name="tabs" type="radio" id="{{tab.shortName}}Tab"/>
-{%else%}
-  <input class="input" name="tabs" type="radio" id="{{tab.shortName}}Tab"/>
-{%endif%}
-<label class="label" onClick="updateTab('{{tab.shortName}}')" for="{{tab.shortName}}Tab">{{tab.title}}</label>
-<div id="panel" class="panel nojs">
+<input class="tabInput" name="tabs" type="radio" id="{{tab.shortName}}"/>
+<label class="tabLabel" onClick="updateTab('{{tab.shortName}}')" for="{{tab.shortName}}">{{tab.title}}</label>
+<div id="tabPanel" class="tabPanel">
      {%include_relative {{tab.fileName}}%}
 </div>
 {%endfor%}
-  <script>
-  //Append "Tab" to get the element ID. We don't put "Tab" in the hash because then it tries to jump to the element.
-  if (u = window.location.hash.split('#')[1]) {
-    document.getElementById(u+"Tab").checked=true;
-  } else {
-    document.getElementById('{{page.tabs[0].shortName}}Tab').checked=true;
-  }
-  $('.nojs').removeClass('nojs');
-  </script>
 </div>
