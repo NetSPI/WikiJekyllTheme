@@ -23,9 +23,11 @@
   <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/bootstrap.min.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/index.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/nav.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/scss/tab.css" />
   <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/jquery-ui.min.js"></script>
   <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/index.js"></script>
+
 </head>
 
 <body>
@@ -51,6 +53,9 @@
     </div>
   </div>
 </body>
+{%if layout.customJS%}
+<script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/{{layout.customJS}}"></script>
+{%endif%}
 <script>
   (function(w, d, s, l, i) {
     w[l] = w[l] || [];

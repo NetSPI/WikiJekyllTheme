@@ -1,99 +1,26 @@
 ---
 layout: default
+customJS: tab.js
 ---
-<div id="tabs">
-  <ul class="nav nav-tabs">
-    {%for tab in page.tabs%}
-    <li class="nav-item">
-      {%if page.updateQuery%}
-      <a class="nav-link" onClick="updateTab('{{tab.shortName}}')" href="#{{tab.shortName}}">{{tab.title}}</a>
-      {%else%}
-      <a class="nav-link" onClick="updateTab('{{tab.shortName}}', true)" href="#{{tab.shortName}}">{{tab.title}}</a>
-      {%endif%}
-    </li>
-    {%endfor%}
-  </ul>
-  <div class="tab-content">
-    {%for tab in page.tabs%}
-    <div role="tabpanel" class="tab-pane" id="{{tab.shortName}}">
-      {%include_relative {{tab.fileName}}%}
-    </div>
-    {%endfor%}
-  </div>
+<div id="tabs" class="tabs nojs">
+{%for tab in page.tabs%}
+{%if forloop.index==1%}
+  <input class="input" name="tabs" type="radio" id="{{tab.shortName}}Tab" checked/>
+{%else%}
+  <input class="input" name="tabs" type="radio" id="{{tab.shortName}}Tab"/>
+{%endif%}
+<label class="label" onClick="updateTab('{{tab.shortName}}')" for="{{tab.shortName}}Tab">{{tab.title}}</label>
+<div class="panel">
+     {%include_relative {{tab.fileName}}%}
 </div>
-<script>
-  $(document).ready(function() {
-    var defaultQueryParam = '{{page.queryParam}}'
-    var defaultTab = getQueryParameter(defaultQueryParam);
-    var tabIndex = 0;
-    if (!defaultTab) {
-      defaultTab = "{{page.tabs[0].shortName}}";
-    } else {
-      tabIndex = getTabIndex(defaultTab);
-    }
-    $($('#tabs ul li a')[tabIndex]).addClass('active')
-    $("#tabs").tabs({
-      active: tabIndex
-    });
-
-    function getQueryParameter(key) {
-      key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
-      var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
-      return match && decodeURIComponent(match[1].replace(/\+/g, " "));
-    }
-    //Update the tab type
-    //Have an option to not update the url
-    //Make it global
-    window.updateTab = function(tab, ignoreURL) {
-      if (!tab) {
-        tab = getQueryParameter(defaultQueryParam);
-        if (!tab) {
-          tab = defaultTab
-        }
-      };
-      $('#tabs ul li a').removeClass('active')
-      $('#tabs ul li a[href="#' + tab + '"]').addClass('active')
-      $("#tabs").tabs({
-        active: getTabIndex(tab)
-      });
-      !ignoreURL && updateQueryStringParameter(defaultQueryParam, tab);
-    }
-
-    function getTabIndex(tab) {
-      var tabs = $('#tabs ul li a');
-      for (var i = 0; i < tabs.length; i++) {
-        if (tabs[i].getAttribute('href') == "#" + tab) {
-          return i;
-        }
-      }
-    }
-    //Update a query string paramter in the url
-    function updateQueryStringParameter(key, value) {
-      var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-      var uri = window.location.search;
-      var separator = uri.indexOf('?') !== -1 ?
-        "&" :
-        "?";
-      var newPath;
-      if (uri.match(re)) {
-        newPath = uri.replace(re, '$1' + key + "=" + value + '$2')
-      } else {
-        newPath = uri + separator + key + "=" + value
-      }
-      if (history.pushState) {
-        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + newPath;
-        window.history.pushState({
-          path: newurl
-        }, '', newurl);
-      } else {
-        window.location.search = newPath
-      }
-
-      //On forward/back buttons refresh everything
-      $(window).on("popstate", function(e) {
-        updateTab(null, true);
-        $('.nav-link').blur(); //Just weird bootstrap ui bug
-      });
-    }
-  })
-</script>
+{%endfor%}
+  <script>
+  //Append "Tab" to get the element ID. We don't put "Tab" in the hash because then it tries to jump to the element.
+  if (u = window.location.hash.split('#')[1]) {
+    document.getElementById(u+"Tab").checked=true;
+  } else {
+    document.getElementById('{{page.tabs[0].shortName}}Tab').checked=true;
+  }
+    document.getElementById('tabs').classList.remove('nojs');
+  </script>
+</div>

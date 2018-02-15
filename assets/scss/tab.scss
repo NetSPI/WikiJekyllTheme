@@ -1,0 +1,55 @@
+---
+---
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.tabs.nojs {
+  display: none;
+}
+.input {
+  position: absolute;
+  opacity: 0;
+}
+.label {
+  width: 100%;
+  color: #CE112D;
+  font-weight: normal;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-left: .2rem;
+  padding: .75em 1em;
+  font-size: 17px;
+  border-radius: .25rem .25rem 0 0;
+}
+.label:focus {outline:0;}
+.input:checked + .label {
+  background: white;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid white;
+  color: #55595c;
+  border-bottom: 1px transparent;
+}
+.label:hover {
+  border: 1px solid;
+  border-bottom: none;
+  border-color: #eceeef #eceeef #ddd;
+}
+@media (min-width: 600px) {
+  .label {
+    width: auto;
+  }
+}
+.panel {
+  display: none;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .panel {
+    order: 99;
+  }
+}
+.input:checked + .label + .panel {
+  display: block;
+}
