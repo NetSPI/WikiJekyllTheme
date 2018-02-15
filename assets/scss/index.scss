@@ -2,7 +2,7 @@
 ---
 $mobileWidth: 700px;
 html, body {
-  font-family: "NetSPISegoe";
+  font-family: "NetSPISegoe", "Open Sans";
   font-weight: 400;
   min-height: 100%;
   background: white;
@@ -10,11 +10,11 @@ html, body {
 }
 
 @font-face {
-  font-family: NetSPISegoeBold, "Open Sans";
+  font-family: NetSPISegoeBold;
   src: url("{{site.baseurl}}/assets/fonts/segoe-ui-bold.ttf"), url("{{site.baseurl}}/assets/fonts/segoe-ui-bold.eot?#iefix");
 }
 @font-face {
-  font-family: NetSPISegoe, "Open Sans";
+  font-family: NetSPISegoe;
   src: url("{{site.baseurl}}/assets/fonts/segoe-ui.ttf"), url("{{site.baseurl}}/assets/fonts/segoe-ui.eot?#iefix");
 }
 
