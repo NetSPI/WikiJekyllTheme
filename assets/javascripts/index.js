@@ -80,13 +80,9 @@ $(document).ready(function() {
   //But if we only include it in tab.js any page without tabs on that website
   //will remove the hash.
   $('a').click(function(event) {
-    event.preventDefault();
-    debugger;
     var href = event.currentTarget.getAttribute('href');
-    if (/^(https?:)?\/\//.test(href)) { //If it's not a relative link, go away
-      var win = window.open(href, '_blank'); //Open external links in new tab
-      win.focus();
-    } else {
+    if (!(/^(https?:)?\/\//).test(href)) { //If it's not a relative link, go away
+      event.preventDefault();
       window.location = href + window.location.hash;
     }
   })
