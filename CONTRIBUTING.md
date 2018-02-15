@@ -1,6 +1,6 @@
 # Contributing
 
-This is the documentation for contributing to an individual wiki, information for contributing to the theme repository is a WIP.
+This is the documentation for contributing to an individual wiki. Please create an issue for any unclear or missing information. Documentation for contributing to the theme repository is a WIP.
 
 ## Basic contributing
 To start contributing, fork the repository and make your changes. After you are done making your changes submit a pull request to the main repository with an explanation of your changes. For any help, please create an issue.
