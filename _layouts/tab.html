@@ -2,15 +2,15 @@
 layout: default
 customJS: tab.js
 ---
-<div id="tabs" class="tabs nojs">
+<div id="tabs" class="tabs">
 {%for tab in page.tabs%}
 {%if forloop.index==1%}
-  <input class="input" name="tabs" type="radio" id="{{tab.shortName}}Tab" checked/>
+  <input class="input" name="tabs" type="radio" id="{{tab.shortName}}Tab"/>
 {%else%}
   <input class="input" name="tabs" type="radio" id="{{tab.shortName}}Tab"/>
 {%endif%}
 <label class="label" onClick="updateTab('{{tab.shortName}}')" for="{{tab.shortName}}Tab">{{tab.title}}</label>
-<div class="panel">
+<div id="panel" class="panel nojs">
      {%include_relative {{tab.fileName}}%}
 </div>
 {%endfor%}
@@ -21,6 +21,6 @@ customJS: tab.js
   } else {
     document.getElementById('{{page.tabs[0].shortName}}Tab').checked=true;
   }
-    document.getElementById('tabs').classList.remove('nojs');
+  $('.nojs').removeClass('nojs');
   </script>
 </div>
