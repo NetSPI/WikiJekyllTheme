@@ -7,28 +7,28 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{site.data.metadata.title}}" />
   <meta property="og:description" content="{{site.data.metadata.description}}" />
-  <meta property="og:image" content="{{site.pageurl}}{{site.data.metadata.ogImageLink}}" />
+  <meta property="og:image" content="{{site.pagebase}}{{site.data.metadata.ogImageLink}}" />
   <meta name="twitter:title" content="{{site.data.metadata.title}}" />
   <meta name="twitter:description" content="{{site.data.metadata.description}}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{{site.pageurl}}{{site.data.metadata.twitterImageLink}}">
+  <meta name="twitter:image" content="{{site.pagebase}}{{site.data.metadata.twitterImageLink}}">
   <meta name="twitter:site" content="@netspi" />
   <meta name="twitter:creator" content="@netspi" />
   <meta name="description" content="{{site.data.metadata.description}}">
   <meta name="keywords" content="{{site.data.metadata.keywords}}">
   <link rel="author" href="https://netspi.com" />
-  <link rel="shortcut icon" href="{{site.pageurl}}/assets/images/favicon.ico">
+  <link rel="shortcut icon" href="{{site.pagebase}}/assets/images/favicon.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{site.pageurl}}/assets/scss/bootstrap.min.css" />
-  <link rel="stylesheet" href="{{site.pageurl}}/assets/scss/index.css" />
-  <link rel="stylesheet" href="{{site.pageurl}}/assets/scss/nav.css" />
-  <link rel="stylesheet" href="{{site.pageurl}}/assets/scss/tab.css" />
+  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/bootstrap.min.css" />
+  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/index.css" />
+  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/nav.css" />
+  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/tab.css" />
   <!-- We're going to load JS up top, this makes sure all of our painting is done as fast as possible  -->
-  <script type="text/javascript" src="{{site.pageurl}}/assets/javascripts/jquery-2.2.4.min.js"></script>
-  <script type="text/javascript" async src="{{site.pageurl}}/assets/javascripts/index.js"></script>
+  <script type="text/javascript" src="{{site.pagebase}}/assets/javascripts/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" async src="{{site.pagebase}}/assets/javascripts/index.js"></script>
   {%if layout.customJS%}
-  <script type="text/javascript" async src="{{site.pageurl}}/assets/javascripts/{{layout.customJS}}"></script>
+  <script type="text/javascript" async src="{{site.pagebase}}/assets/javascripts/{{layout.customJS}}"></script>
   {%endif%}
   <script>
     (function(w, d, s, l, i) {
@@ -59,7 +59,7 @@
         <span></span>
       </div>
       <div id="logoContainer">
-        <img onClick="window.location.href='{{site.pageurl}}'" src="{{site.pageurl}}/assets/images/logo.png" /><br/>
+        <img onClick="window.location.href='{{site.pagebase}}'" src="{{site.pagebase}}/assets/images/logo.png" /><br/>
       </div>
     </div>
     <div class="n-navbar default">
