@@ -10,3 +10,4 @@ Install docker and run the below commands. This makes it so we don't have to hav
 $> docker run --rm -p 4000:4000 --volume="%CD%:/srv/jekyll" -it jekyll/jekyll:3.5 /bin/sh
 # jekyll serve --force-polling
 ```
+Then open a web browser and go to `http://localhost:4000`.
