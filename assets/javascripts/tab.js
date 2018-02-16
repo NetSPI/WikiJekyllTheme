@@ -24,7 +24,7 @@ $(document).ready(function() {
   
   //Are there tabs on the page
   function areTabsOnPage() {
-   return $(".tabs .tabInput").length>0);
+   return $(".tabs .tabInput").length>0;
   }
     
   //Does the current hash have a matching tab on the page
