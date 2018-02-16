@@ -18,9 +18,6 @@ $(document).ready(function() {
   if (!window.location.hash) {
     window.location.hash = $(".tabs .tabInput")[0].id;
   } else {
-    //If the hash we have doesn't exist, keep it, but just show another tab
-    if (!$(".tabs .tabInput#" + window.location.hash.replace('#', '')).length) {
-      $(".tabs .tabInput")[0].attr('checked', 'checked');
-    }
-  }
+    $(".tabs .tabInput")[0].attr('checked', 'checked');
+   }
 })
