@@ -1,16 +1,7 @@
 $(document).ready(function() {
-
   //When the navigation hamburger, or X, is clicked open/close it.
   $('.n-nav-icon').click(function() {
     toggleNavigation();
-    //Hide the scroll from the main content, so it doesn't affect the full nav on mobile
-    if (isMobile()) {
-      if ($('.n-navbar').hasClass('active')) {
-        $('body').addClass('noscroll');
-      } else {
-        $('body').removeClass('noscroll');
-      }
-    }
   });
 
   //Set the active route
@@ -36,8 +27,19 @@ $(document).ready(function() {
 
   //Toggle the navigation
   function toggleNavigation() {
-    $('.n-nav-icon').toggleClass('default');
-    $(".n-navbar").toggleClass('default');
+    if ($('.n-navbar').hasClass('default')) {
+      if (isMobile()) {
+        openNavigation();
+      } else {
+        closeNavigation();
+      }
+    } else {
+      if (isMobile()) {
+        closeNavigation();
+      } else {
+        openNavigation();
+      }
+    }
   }
 
   //Close the navigation
@@ -73,7 +75,7 @@ $(document).ready(function() {
       if (href.startsWith('#')) {
         window.location = href;
       } else {
-       window.location = href + window.location.hash;
+        window.location = href + window.location.hash;
       }
       event.preventDefault();
     }

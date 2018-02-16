@@ -52,6 +52,7 @@ $mobileWidth: 700px;
   @media (max-width: $mobileWidth) {
     & {
       width: 100vw;
+      overflow-y: scroll;
     }
 
     &.default {
