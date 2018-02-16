@@ -15,9 +15,8 @@ $(document).ready(function() {
   });
 
   //If there's no hash set a default one
-  if (!window.location.hash) {
+  //Same if there's a hash that we don't have
+  if (!window.location.hash || !$(".tabs .tabInput#" + window.location.hash.replace('#', '')).length) {
     window.location.hash = $(".tabs .tabInput")[0].id;
-  } else {
-    $(".tabs .tabInput")[0].attr('checked', 'checked');
-   }
+  }
 })
