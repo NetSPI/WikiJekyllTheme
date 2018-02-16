@@ -67,12 +67,15 @@ $(document).ready(function() {
   //This is only needed on websites that use tabs
   //But if we only include it in tab.js any page without tabs on that website
   //will remove the hash.
-  //We also use this to add the pagebase for all <a> tags, so that's useful.
   $('a').click(function(event) {
     var href = event.currentTarget.getAttribute('href');
     if (!(/^(https?:)?\/\//).test(href)) { //If it's not a relative link, go away
+      if (href.startsWith('#') {
+        window.location = href;
+      } else {      
+       window.location = href + window.location.hash;
+      }
       event.preventDefault();
-      window.location = href + window.location.hash;
     }
   })
 })
