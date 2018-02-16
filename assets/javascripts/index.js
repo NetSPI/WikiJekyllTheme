@@ -1,5 +1,3 @@
----
----
 $(document).ready(function() {
 
   //When the navigation hamburger, or X, is clicked open/close it.
@@ -74,7 +72,7 @@ $(document).ready(function() {
     var href = event.currentTarget.getAttribute('href');
     if (!(/^(https?:)?\/\//).test(href)) { //If it's not a relative link, go away
       event.preventDefault();
-      window.location = "{{site.pagebase}}"+ href + window.location.hash;
+      window.location = href + window.location.hash;
     }
   })
 })
