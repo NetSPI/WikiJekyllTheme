@@ -41,6 +41,13 @@ $(document).ready(function() {
       }
     }
   }
+  $(window).resize(function() {
+    if (isMobile()) {
+      closeNavigation();
+    } else {
+      openNavigation();
+    }
+  })
 
   //Close the navigation
   function closeNavigation() {
