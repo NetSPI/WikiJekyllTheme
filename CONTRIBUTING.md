@@ -21,7 +21,7 @@ Follow the styles already set in the existing files if not listed below.
 - All sub section headers should be `<h4 class="subheading"></h4>`
 - Top level descriptions should be `<p class="readableText"></p>`
 - Secondary descriptions should just be `<p></p>`
-
+- All external links should be `<a target="_blank" rel="noopener" href="[link]"></a>`
 ## Adding a new section
 To add a new page or section place it in the appropriate location. Top level sections should go in the root of the directory, sections with no children should have a .html file in the root directory (unless utilizing some themes), and children of a section should go under the parent directory.
 
