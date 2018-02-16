@@ -169,6 +169,7 @@ ul.noindent {
 
 .loadWrapper {
   -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
   transition: .5s ease;
   background: white;
   text-align: center;
@@ -201,6 +202,7 @@ a {
   padding-right: 45px;
   padding-top: 90px;
   -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
   transition: .5s ease;
   margin-left: auto;
 }
@@ -262,7 +264,11 @@ pre {
   cursor: pointer;
   cursor: hand;
   -webkit-transition: text-decoration .25s ease;
+  -webkit-transition: -webkit-text-decoration .25s ease;
+  transition: -webkit-text-decoration .25s ease;
+  -o-transition: text-decoration .25s ease;
   transition: text-decoration .25s ease;
+  transition: text-decoration .25s ease, -webkit-text-decoration .25s ease;
 }
 
 tr td:first-of-type {

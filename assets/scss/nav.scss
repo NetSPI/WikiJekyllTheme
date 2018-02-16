@@ -34,6 +34,7 @@ $mobileWidth: 700px;
     font-size: 18px;
     padding-top: 20px;
     -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
   }
 
@@ -87,6 +88,7 @@ $mobileWidth: 700px;
   & .n-nav-item {
     margin-left: -300px;
     -webkit-transition: margin-left 0.5s ease, padding-left 0.5s ease;
+    -o-transition: margin-left 0.5s ease, padding-left 0.5s ease;
     transition: margin-left 0.5s ease, padding-left 0.5s ease;
     padding-left: 25px;
     width: 275px;
@@ -185,9 +187,11 @@ $mobileWidth: 700px;
     margin-bottom: 10px;
     border-radius: 5px;
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
     cursor: pointer;
     -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
 
     & span:nth-child(1) {
@@ -217,12 +221,14 @@ $mobileWidth: 700px;
 
     &.default span:nth-child(2) {
       -webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
     }
 
     &.default span:nth-child(3) {
       -webkit-transform: rotate(-45deg);
-      transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
     }
     &.default {
       left: 300px;
@@ -257,7 +263,8 @@ $mobileWidth: 700px;
       &.default span:nth-child(4), {
         background: #3d3935;
         -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
         width: 27px;
         left: 0px;
       }
@@ -280,12 +287,14 @@ $mobileWidth: 700px;
 
       & span:nth-child(2) {
         -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
       }
 
       & span:nth-child(3) {
         -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
       }
     }
 
@@ -303,8 +312,10 @@ $mobileWidth: 700px;
       margin-left: 9px;
       left: 0;
       -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
       -webkit-transition: 0.25s ease;
+      -o-transition: 0.25s ease;
       transition: 0.25s ease;
     }
   }

@@ -21,14 +21,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/bootstrap.min.css" />
-  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/index.css" />
-  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/nav.css" />
-  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/tab.css" />
+  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/index.css?{{site.time | date: '%s%N'}}" />
+  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/nav.css?{{site.time | date: '%s%N'}}" />
+  <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/tab.css?{{site.time | date: '%s%N'}}" />
   <!-- We're going to load JS up top, this makes sure all of our painting is done as fast as possible  -->
   <script type="text/javascript" src="{{site.pagebase}}/assets/javascripts/jquery-2.2.4.min.js"></script>
-  <script type="text/javascript" async src="{{site.pagebase}}/assets/javascripts/index.js"></script>
+  <script type="text/javascript" async src="{{site.pagebase}}/assets/javascripts/index.js?{{site.time | date: '%s%N'}}"></script>
   {%if layout.customJS%}
-  <script type="text/javascript" async src="{{site.pagebase}}/assets/javascripts/{{layout.customJS}}"></script>
+  <script type="text/javascript" async src="{{site.pagebase}}/assets/javascripts/{{layout.customJS}}?{{site.time | date: '%s%N'}}"></script>
   {%endif%}
   <script>
     (function(w, d, s, l, i) {
@@ -59,7 +59,7 @@
         <span></span>
       </div>
       <div id="logoContainer">
-        <img onClick="window.location.href='{{site.pagebase}}'" src="{{site.pagebase}}/assets/images/logo.png" /><br/>
+        <img onClick="window.location.href='{{site.pagebase}}'" src="{{site.pagebase}}/assets/images/logo.png?{{site.time | date: '%s%N'}}" /><br/>
       </div>
     </div>
     <div class="n-navbar default">
