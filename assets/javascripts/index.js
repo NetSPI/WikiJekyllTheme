@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  //Remove our preload class so transitions don't fire on page load
+  $("body").removeClass("preload");
   //When the navigation hamburger, or X, is clicked open/close it.
   $('.n-nav-icon').click(function() {
     toggleNavigation();
