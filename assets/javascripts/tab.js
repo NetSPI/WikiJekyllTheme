@@ -19,14 +19,16 @@ $(document).ready(function() {
   if (areTabsOnPage() && !doesHashExistOnPage()) {
     window.location.hash = $(".tabs .tabInput")[0].id;
   }
-  
+
   //Are there tabs on the page
   function areTabsOnPage() {
-   return $(".tabs .tabInput").length>0;
+    return $(".tabs .tabInput").length > 0;
   }
-    
+
   //Does the current hash have a matching tab on the page
   function doesHashExistOnPage() {
-    return ($(".tabs .tabInput#" + window.location.hash.replace('#', '')).length>0)
+    if (!window.location.hash.replace('#', '')) 
+      return false;
+    return ($(".tabs .tabInput#" + window.location.hash.replace('#', '')).length > 0)
   }
 })
