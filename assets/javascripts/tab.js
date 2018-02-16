@@ -22,5 +22,5 @@ $(document).ready(function() {
     if (!$(".tabs .tabInput#" + window.location.hash.replace('#', '')).length) {
       $(".tabs .tabInput")[0].attr('checked', 'checked');
     }
-  })
+  }
 })
