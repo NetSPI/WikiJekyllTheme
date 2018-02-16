@@ -58,13 +58,14 @@ $mobileWidth: 700px;
       width: 0;
       overflow-y: auto;
     }
-    /*When the nav bar is closed let content be full width*/
+    /*When the nav bar is closed let content be full width, with no scroll*/
     &+#contentContainer {
-      width: calc(100% - 300px);
+      width: calc(100vw);
+      overflow: hidden;
     }
     /*When the nav bar is open, restrict the width of the content container*/
     &.default+#contentContainer {
-      width: calc(100%);
+      width: calc(100vw);
     }
 
     & li {
