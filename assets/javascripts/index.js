@@ -70,7 +70,7 @@ $(document).ready(function() {
   $('a').click(function(event) {
     var href = event.currentTarget.getAttribute('href');
     if (!(/^(https?:)?\/\//).test(href)) { //If it's not a relative link, go away
-      if (href.startsWith('#') {
+      if (href.startsWith('#')) {
         window.location = href;
       } else {      
        window.location = href + window.location.hash;
