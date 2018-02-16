@@ -18,7 +18,6 @@ $(document).ready(function() {
   //Same if there's a hash that we don't have
   if (areTabsOnPage() && !doesHashExistOnPage()) {
     window.location.hash = $(".tabs .tabInput")[0].id;
-    }
   }
   
   //Are there tabs on the page
