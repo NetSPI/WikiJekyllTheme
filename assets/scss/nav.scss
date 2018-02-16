@@ -61,7 +61,6 @@ $mobileWidth: 700px;
     /*When the nav bar is closed let content be full width, with no scroll*/
     &+#contentContainer {
       width: calc(100vw);
-      overflow: hidden;
     }
     /*When the nav bar is open, restrict the width of the content container*/
     &.default+#contentContainer {

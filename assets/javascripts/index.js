@@ -56,11 +56,11 @@ $(document).ready(function() {
     if (isMobile()) {
       $('.n-nav-icon').removeClass('default');
       $(".n-navbar").removeClass('default');
+      $('body').addClass('noscroll');
     } else {
       $('.n-nav-icon').addClass('default');
       $(".n-navbar").addClass('default');
     }
-    $('body').removeClass('noscroll');
   }
 
   //Since we track tabs with the #
@@ -72,7 +72,7 @@ $(document).ready(function() {
     if (!(/^(https?:)?\/\//).test(href)) { //If it's not a relative link, go away
       if (href.startsWith('#')) {
         window.location = href;
-      } else {      
+      } else {
        window.location = href + window.location.hash;
       }
       event.preventDefault();
