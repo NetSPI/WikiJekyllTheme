@@ -35,8 +35,7 @@
   outline: 0;
 }
 
-.tabInput:target + .tabLabel,
-.tabInput:checked + .tabLabel {
+.tabInput:target + .tabLabel {
   background: white;
   border-bottom-color: #CE112D;
   color: #55595c;
@@ -53,8 +52,7 @@
           order: 99;
 }
 
-.tabInput:target + .tabLabel + .tabPanel,
-.tabInput:checked + .tabLabel + .tabPanel {
+.tabInput:target + .tabLabel + .tabPanel {
   display: block;
 }
 
