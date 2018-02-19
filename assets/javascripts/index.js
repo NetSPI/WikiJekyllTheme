@@ -24,7 +24,7 @@ $(document).ready(function() {
   }
   initializeRoute();
   function isMobile() {
-    return $('.mobile:visible').length > 0;
+    return $('.mobile').offsetParent().length > 0;
   }
 
   //Toggle the navigation
