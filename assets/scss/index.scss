@@ -1,7 +1,9 @@
 ---
 ---
 $mobileWidth: 700px;
-
+* {
+  box-sizing: border-box;
+}
 body,
 html {
   font-family: "Open Sans", sans-serif;
@@ -13,7 +15,6 @@ html {
   line-height: 1.5;
   overflow-x: hidden;
 }
-
 table {
     width: 100%;
     max-width: 100%;
