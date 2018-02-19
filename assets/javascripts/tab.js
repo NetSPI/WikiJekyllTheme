@@ -2,17 +2,10 @@ $(document).ready(function() {
   window.updateTab = function(tab, ignoreURL) {
     if (!tab)
       return;
-    $('#tabs #' + tab + "Tab").attr('checked', 'checked')
     if (!ignoreURL) {
       window.location.hash = tab;
     }
   }
-
-  //On forward/back buttons refresh everything
-  $(window).on("popstate", function(e) {
-    $('#tabs .tabInput').removeAttr('checked');
-    updateTab(window.location.hash.replace('#',''), true);
-  });
 
   //If there's no hash set a default one
   //Same if there's a hash that we don't have
