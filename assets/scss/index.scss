@@ -9,9 +9,72 @@ html {
   min-height: 100%;
   background: white;
   color: #3d3935;
+  margin: 0px;
+  line-height: 1.5;
   overflow-x: hidden;
 }
 
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #eceeef;
+}
+
+table tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+table td, table th {
+    padding: .75rem;
+    line-height: 1.5;
+    text-align: left;
+    font-size: 1rem;
+    vertical-align: top;
+    border-top: 1px solid #eceeef;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.75rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    margin-top: 0px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+code {
+    padding: .2rem .4rem;
+    font-size: 1rem;
+    color: #bd4147;
+    background-color: #f7f7f9;
+    border-radius: .25rem;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 .preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;

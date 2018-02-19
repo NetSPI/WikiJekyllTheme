@@ -47,7 +47,7 @@ $mobileWidth: 700px;
   }
   /*When the nav bar is open, restrict the width of the content container*/
   &.default+#contentContainer {
-    width: calc(100% - 300px);
+    width: calc(100% - 390px);
   }
   @media (max-width: $mobileWidth) {
     & {
@@ -145,7 +145,6 @@ $mobileWidth: 700px;
   & ul:first-child {
     margin-top: 0;
   }
-
   & .n-nav-item a {
     color: #929191;
   }
