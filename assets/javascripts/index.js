@@ -2,7 +2,7 @@ $(document).ready(function() {
   //Remove our preload class so transitions don't fire on page load
   $("body").removeClass("preload");
   //When the navigation hamburger, or X, is clicked open/close it.
-  $('.n-nav-icon').click(function() {
+  $('.n-nav-icon').on('click', function() {
     toggleNavigation();
   });
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
   //This is only needed on websites that use tabs
   //But if we only include it in tab.js any page without tabs on that website
   //will remove the hash.
-  $('a').click(function(event) {
+  $('a').on('click', function(event) {
     var href = event.currentTarget.getAttribute('href');
     if (!(/^(https?:)?\/\//).test(href)) { //If it's not a relative link, go away
       if (href.startsWith('#')) {
