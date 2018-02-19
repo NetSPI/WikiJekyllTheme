@@ -43,7 +43,7 @@ $(document).ready(function() {
       }
     }
   }
-  $(window).resize(function() {
+  $(window).on('resize', function() {
     if (isMobile()) {
       closeNavigation();
     } else {
