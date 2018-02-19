@@ -90,30 +90,30 @@ $mobileWidth: 700px;
     -o-transition: margin-left 0.5s ease, padding-left 0.5s ease;
     transition: margin-left 0.5s ease, padding-left 0.5s ease;
     padding-left: 25px;
-    width: 275px;
+    width: 250px;
   }
 
   &.default .n-nav-item {
     margin-left: 0;
     padding-left: 25px;
-    width: 275px;
+    width: 250px;
     background: rgba(207, 10, 44, 0);
   }
 
   &.default .n-nav-item.active {
-    width: 275px;
+    width: 250px;
     background: rgba(207, 10, 44, 1);
   }
   @media (max-width: $mobileWidth) {
     & .n-nav-item {
       margin-left: 0;
       padding-left: 25px;
-      width: 275px;
+      width: 250px;
       background: rgba(207, 10, 44, 0);
     }
 
     & .n-nav-item.active {
-      width: 275px;
+      width: 250px;
       background: rgba(207, 10, 44, 1);
     }
   }
