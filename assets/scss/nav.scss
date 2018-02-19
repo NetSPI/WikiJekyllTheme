@@ -47,7 +47,7 @@ $mobileWidth: 700px;
   }
   /*When the nav bar is open, restrict the width of the content container*/
   &.default+#contentContainer {
-    width: calc(100% - 390px);
+    width: calc(100% - 300px);
   }
   @media (max-width: $mobileWidth) {
     & {
