@@ -6,7 +6,11 @@ $(document).ready(function() {
       window.location.hash = tab;
     }
   }
-
+  $(window).on("popstate", function(e) {
+    $('#tabs .tabInput').each(function(element) {
+      element.checked=false;
+    });
+  })
   //If there's no hash set a default one
   //Same if there's a hash that we don't have
   if (areTabsOnPage() && !doesHashExistOnPage()) {
@@ -20,7 +24,7 @@ $(document).ready(function() {
 
   //Does the current hash have a matching tab on the page
   function doesHashExistOnPage() {
-    if (!window.location.hash.replace('#', '')) 
+    if (!window.location.hash.replace('#', ''))
       return false;
     return ($(".tabs .tabInput#" + window.location.hash.replace('#', '')).length > 0)
   }
