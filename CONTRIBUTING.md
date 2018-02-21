@@ -15,23 +15,37 @@ If you want to edit `https://sqlwiki.netspi.com/attackQueries/persistence`, you 
 
 Follow the styles already set in the existing files if not listed below.
 
-- All tables should have classes of `table table-striped table-hover`
 - All code snippets should be wrapped in `<code></code>`
 - All top headers should be `<h3></h3>`
 - All sub section headers should be `<h4 class="subheading"></h4>`
 - Top level descriptions should be `<p class="readableText"></p>`
 - Secondary descriptions should just be `<p></p>`
 - All external links should be `<a target="_blank" rel="noopener" href="[link]"></a>`
-## Adding a new section
-To add a new page or section place it in the appropriate location. Top level sections should go in the root of the directory, sections with no children should have a .html file in the root directory (unless utilizing some themes), and children of a section should go under the parent directory.
 
-After adding a new section, modify the \_data/nav.yml file and add the section in its proper place. There should only be 3 navigation types as stated in [Navigation Types](#navigation-types).
-
-## Navigation Types
-There are only 3 types of sections allowed through our navigation style. Top level clickable links with children, without children, and top level non-clickable links with children.
+## Section Types
+There are only 3 types of sections allowed through our navigation style. Clickable sections with children, without children, and non-clickable sections with children.
 
 <img src="./images/contributingNavTypesExample.PNG"/>
 
+## Adding a new section
+To add a new page or section place it in the appropriate location.
+
+Clickable sections w/ children:
+  * /sectionName/index.html #For the top level page
+  * /sectionName/childName.html #For each child
+Clickable sections w/o children:
+  * /sectionName.html
+Non-clickable sections:
+  * /sectionName/childName.html
+
+After adding a new section, modify the \_data/nav.yml file and add the section in its proper place. There should only be 3 navigation types as stated in [Navigation Types](#navigation-types).
+
 ## URL Path Rules
-When setting the URL for a file, don't use a trailing backslash and leave out the html. Example: "/detection" for detection.html in the root directory.
-Use the backslash when referring to a directory with an index.html file inside of it. Example: "/identification/" from /identification/index.html.
+When referencing a page through an href or other link tag use the following guidelines. Pay close attention to the existence or lack of a trailing backslash:
+Clickable sections w/ children:
+  * For the section link use /sectionName/
+  * For the children links use /sectionName/childName
+Clickable sections w/o children:
+  * /sectionName
+Non-clickable sections:
+  * /sectionName/childName
