@@ -26,7 +26,7 @@ Follow the styles already set in the existing files if not listed below.
 There are only 3 types of sections allowed through our navigation style. 
 - Clickable sections with children
 - Clickable sections without children
-- Non-clickable sections with children. 
+- Non-clickable sections with children
 
 Non-clickable sections are typically used as a title header for their children, when the children grouping don't need a description (i.e. "Miscellanious"). Clickable sections with children typically utilize the clickable section as a place to give an overview of the children.
 
