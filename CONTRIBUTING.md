@@ -45,7 +45,7 @@ To add a new section or child place it in the appropriate location.
 ### Non-clickable sections:
   * /sectionName/childName.html #For each child
 
-After adding a new section, modify the \_data/nav.yml file and add the section in its proper place. There should only be 3 navigation types as stated in [Navigation Types](#navigation-types).
+After adding a new section, modify the \_data/nav.yml file and add the section in its proper place. There should only be 3 navigation types as stated in [Section Types](#section-types).
 
 ## URL Path Rules
 When referencing a page through an href or other link tag use the following guidelines. Pay close attention to the existence or lack of a trailing backslash:
