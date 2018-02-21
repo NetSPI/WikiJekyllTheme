@@ -31,14 +31,14 @@ There are only 3 types of sections allowed through our navigation style. Clickab
 To add a new section or child place it in the appropriate location.
 
 Clickable sections w/ children:
-  * /sectionName/index.html #For the top level page
+  * /sectionName/index.html #For the clickable section
   * /sectionName/childName.html #For each child
   
 Clickable sections w/o children:
-  * /sectionName.html
+  * /sectionName.html #For the clickable sectoin
 
 Non-clickable sections:
-  * /sectionName/childName.html
+  * /sectionName/childName.html #For each child
 
 After adding a new section, modify the \_data/nav.yml file and add the section in its proper place. There should only be 3 navigation types as stated in [Navigation Types](#navigation-types).
 
