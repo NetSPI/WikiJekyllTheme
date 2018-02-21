@@ -9,7 +9,7 @@ To start contributing, fork the repository and make your changes. After you are 
 To edit existing content in a wiki, navigate to the page you would like to edit on the website. Look at the URL and match that to the directory structure of the repo.
 
 ### Example
-If you want to edit `https://sqlwiki.netspi.com/attackQueries/persistence`, you would navigate to `https://github.com/[YOUR_USERNAME]/SQLInjectionWiki/attackQueries/persistence.html` and make your changes in that file.
+If you want to edit `https://sqlwiki.netspi.com/attackQueries/persistence`, you would navigate to `https://github.com/[YOUR_USERNAME]/SQLInjectionWiki/attackQueries/persistence.html` and make your changes in that file. If you are having trouble finding a file try searching a few words from that page in the Github search bar. Make sure "This repository" is highlighted in the search bar.
 
 ## Style
 
