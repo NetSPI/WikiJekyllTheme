@@ -29,7 +29,7 @@ After adding a new section, modify the \_data/nav.yml file and add the section i
 
 ## Navigation Types
 There are only 3 types of sections allowed through our navigation style. Top level clickable links with children, without children, and top level non-clickable links with children.
-<img src="./images/contributingNavLinkExample.png"/>
+<img src="./images/contributingNavTypesExample.png"/>
 
 ## URL Path Rules
 When setting the URL for a file, don't use a trailing backslash and leave out the html. Example: "/detection" for detection.html in the root directory.
