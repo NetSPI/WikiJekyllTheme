@@ -28,13 +28,15 @@ There are only 3 types of sections allowed through our navigation style. Clickab
 <img src="./images/sectionTypesExample.gif"/>
 
 ## Adding a new section
-To add a new page or section place it in the appropriate location.
+To add a new section or child place it in the appropriate location.
 
 Clickable sections w/ children:
   * /sectionName/index.html #For the top level page
   * /sectionName/childName.html #For each child
+  
 Clickable sections w/o children:
   * /sectionName.html
+
 Non-clickable sections:
   * /sectionName/childName.html
 
