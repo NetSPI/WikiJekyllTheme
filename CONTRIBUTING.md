@@ -23,9 +23,9 @@ Follow the styles already set in the existing files if not listed below.
 - All external links should be `<a target="_blank" rel="noopener" href="[link]"></a>`
 
 ## Section Types
-There are only 3 types of sections allowed through our navigation style. Clickable sections with children, without children, and non-clickable sections with children.
+There are only 3 types of sections allowed through our navigation style. Clickable sections with children, without children, and non-clickable sections with children. Non-clickable sections are typically used as a title header for their children, when the children grouping don't need a description (i.e. "Miscellanious"). Clickable sections with children typically utilize the clickable section as a place to give an overview of the children.
 
-<img src="./images/contributingNavTypesExample.PNG"/>
+<img src="./images/sectionTypesExample.gif"/>
 
 ## Adding a new section
 To add a new page or section place it in the appropriate location.
