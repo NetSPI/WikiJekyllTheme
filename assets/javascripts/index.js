@@ -91,7 +91,7 @@ $(document).ready(function() {
       event.preventDefault();
     }
   })
-  
+
   function loadGoogleAnalytics(w,d,s,l,i) {
     w[l] = w[l] || [];
       w[l].push({
@@ -102,11 +102,12 @@ $(document).ready(function() {
         j = d.createElement(s),
         dl = l != 'dataLayer' ? '&l=' + l : '';
       j.async = true;
+      j.defer = true;
       j.src =
         'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
   }
-  
+
   //Google analytics. Putting it here and not inline with the DOM because it liked to mess with page load there.
   loadGoogleAnalytics(window, document, 'script', 'dataLayer', '{{site.data.metadata.googleTagManagerID}}');
 })
