@@ -1,7 +1,6 @@
 <html>
 
 <head>
-  <title>{{page.title}}</title>
   <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/index.css?{{site.time | date: '%s%N'}}" />
   <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/nav.css?{{site.time | date: '%s%N'}}" />
   <link rel="stylesheet" href="{{site.pagebase}}/assets/scss/tab.css?{{site.time | date: '%s%N'}}" />
@@ -11,6 +10,7 @@
   {%if layout.customJS%}
   <script type="text/javascript" async src="{{site.pagebase}}/assets/javascripts/{{layout.customJS}}?{{site.time | date: '%s%N'}}"></script>
   {%endif%}
+  <title>{{page.title}}</title>
   <meta name="theme-color" content="#ffffff">
   <meta charset="utf-8">
   <meta property="og:type" content="website" />
