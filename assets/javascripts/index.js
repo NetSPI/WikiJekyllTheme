@@ -1,3 +1,5 @@
+---
+---
 $(document).ready(function() {
   //Remove our preload class so transitions don't fire on page load
   $("body").removeClass("preload");
@@ -90,9 +92,8 @@ $(document).ready(function() {
     }
   })
   
-  //Google analytics. Putting it here and not inline with the DOM because it liked to mess with page load there.
-  (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
+  function loadGoogleAnalytics(w,d,s,l,i) {
+    w[l] = w[l] || [];
       w[l].push({
         'gtm.start': new Date().getTime(),
         event: 'gtm.js'
@@ -104,5 +105,8 @@ $(document).ready(function() {
       j.src =
         'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', '{{site.data.metadata.googleTagManagerID}}');
+  }
+  
+  //Google analytics. Putting it here and not inline with the DOM because it liked to mess with page load there.
+  loadGoogleAnalytics(window, document, 'script', 'dataLayer', '{{site.data.metadata.googleTagManagerID}}');
 })
