@@ -15,7 +15,7 @@ $(document).ready(function() {
   })
   //If there's no hash set a default one
   //Same if there's a hash that we don't have
-  if (areTabsOnPage() && !doesHashExistOnPage() && !{{page.ignoreURL}}) {
+  if (areTabsOnPage() && !doesHashExistOnPage() && {% if page.ignoreURL %} false {% else %} true {% endif %}) {
     window.location.hash = $(".tabs .tabInput")[0].id;
   }
 
