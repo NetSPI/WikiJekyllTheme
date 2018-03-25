@@ -1,3 +1,5 @@
+---
+---
 $(document).ready(function() {
   window.updateTab = function(tab, ignoreURL) {
     if (!tab)
@@ -13,7 +15,7 @@ $(document).ready(function() {
   })
   //If there's no hash set a default one
   //Same if there's a hash that we don't have
-  if (areTabsOnPage() && !doesHashExistOnPage()) {
+  if (areTabsOnPage() && !doesHashExistOnPage() && !{{page.ignoreURL}}) {
     window.location.hash = $(".tabs .tabInput")[0].id;
   }
 
