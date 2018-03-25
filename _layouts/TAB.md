@@ -1,6 +1,8 @@
 ## Tab layout
 The [tab layout](https://github.com/NetSPI/WikiJekyllTheme/blob/master/_layouts/tab.html) is an interesting one, but I hope it's useful. It allows a couple different configurations for hopefully every situation that will be required.
 
+A current UX annoyance is that the <- and -> keyboard buttons work on stateful tabs, but not on non-stateful and [partial tabbed](#partial-tabbed-pages) pages. Not sure what to do with that.
+
 ### Front Matter
 The Tab front matter is as follows, make sure to remove everything including and after the `#` character.
 ```
