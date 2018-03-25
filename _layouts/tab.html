@@ -2,10 +2,10 @@
 layout: default
 customJS: tab.js
 ---
-<div id="tabs" class="tabs" data-tabs-ignore-url="{% if page.ignoreURL %} true {% else %} false {% endif %})">
+<div id="tabs" class="tabs" data-tabs-ignore-url="{% if page.ignoreURL %}true{% else %}false{% endif %}">
 {%for tab in page.tabs%}
 <input class="tabInput" {% if tab.default %} checked {% endif %} name="tabs" type="radio" id="{{tab.shortName}}"/>
-<label class="tabLabel" onClick="updateTab('{{tab.shortName}}',{% if page.ignoreURL %} true {% else %} false {% endif %})" for="{{tab.shortName}}">{{tab.title}}</label>
+<label class="tabLabel" onClick="updateTab('{{tab.shortName}}',{% if page.ignoreURL %}true{% else %}false{% endif %})" for="{{tab.shortName}}">{{tab.title}}</label>
 <div id="tabPanel" class="tabPanel">
      {%include_relative {{tab.fileName}}%}
 </div>
