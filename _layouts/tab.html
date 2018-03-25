@@ -5,7 +5,7 @@ customJS: tab.js
 <div id="tabs" class="tabs">
 {%for tab in page.tabs%}
 <input class="tabInput" name="tabs" type="radio" id="{{tab.shortName}}"/>
-<label class="tabLabel" onClick="updateTab('{{tab.shortName}}',{{tab.ignoreURL||false}})" for="{{tab.shortName}}">{{tab.title}}</label>
+<label class="tabLabel" onClick="updateTab('{{tab.shortName}}',{{tab.ignoreURL==true||false}})" for="{{tab.shortName}}">{{tab.title}}</label>
 <div id="tabPanel" class="tabPanel">
      {%include_relative {{tab.fileName}}%}
 </div>
