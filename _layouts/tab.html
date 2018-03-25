@@ -2,7 +2,7 @@
 layout: default
 customJS: tab.js
 ---
-<div id="tabs" class="tabs">
+<div id="tabs" class="tabs" data-ignore-url="{% if page.ignoreURL %} true {% else %} false {% endif %})">
 {%for tab in page.tabs%}
 <input class="tabInput" {% if tab.default %} checked {% endif %} name="tabs" type="radio" id="{{tab.shortName}}"/>
 <label class="tabLabel" onClick="updateTab('{{tab.shortName}}',{% if page.ignoreURL %} true {% else %} false {% endif %})" for="{{tab.shortName}}">{{tab.title}}</label>
@@ -11,6 +11,3 @@ customJS: tab.js
 </div>
 {%endfor%}
 </div>
-<script>
-     var ignorePageURL = {% if page.ignoreURL %} true {% else %} false {% endif %};
-</script>
