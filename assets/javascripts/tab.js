@@ -15,7 +15,7 @@ $(document).ready(function() {
   })
   //If there's no hash set a default one
   //Same if there's a hash that we don't have
-  var ignorePageURLCheck = typeof ignorePageURL != "undefined" && ignorePageURL
+  var ignorePageURLCheck = $('.tabs [data-tab-ignore-url="true"]').length>0;
   if (areTabsOnPage() && !doesHashExistOnPage() && !ignorePageURLCheck) {
     window.location.hash = $(".tabs .tabInput")[0].id;
   }
