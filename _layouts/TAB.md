@@ -22,7 +22,7 @@ tabs:
 The ignoreURL parameter is the only really important parameter here. For wikis like the SQL Injection Wiki, we have tabs that should maintain state across the entire wiki. In that case, so the user is always brought to the relevant DBMS.
 Some wikis will not require that state handling (which is done in the url via a hash parameter), so they can set `ignoreURL` to true, making them stateless tabs. In this case, make sure to set a default tab, otherwise you'll end up with no tabs selected on page load.
 
-
+### Partial Tabbed Pages
 This feature is also only used as a top-level feature, meaning the entire page is a tabbed page. If you would like a tabbed layout further down the page, i.e. https://sqlwiki.netspi.com/detection#oracle, add the following code:
 
 _Make sure to pay attention to the `id` and `for` parameters. They must be equal for each tab._
