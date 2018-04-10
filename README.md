@@ -6,6 +6,7 @@ This is the base jekyll theme for NetSPI's Community wikis. It builds all the de
 
 ## Build instructions
 Install docker and run the below commands. This makes it so we don't have to have a full ruby development environment.
+Also update the \_config.yml file and set `pagebase: ""` this allows us to use the root URL locally. Make sure to change this back before pushing. Currently working on a more elegant solution. Then run:
 ```
 $> docker run --rm -p 4000:4000 --volume="%CD%:/srv/jekyll" -it jekyll/jekyll:3.5 /bin/sh
 # jekyll serve --force-polling
