@@ -11,6 +11,9 @@ To edit existing content in a wiki, navigate to the page you would like to edit 
 ### Example
 If you want to edit `https://sqlwiki.netspi.com/attackQueries/persistence`, you would navigate to `https://github.com/[YOUR_USERNAME]/SQLInjectionWiki/attackQueries/persistence.html` and make your changes in that file. If you are having trouble finding a file try searching a few words from that page in the [Github search bar](https://help.github.com/articles/searching-code/#search-within-a-users-or-organizations-repositories).
 
+## Development
+If you would like to do heavier development and need a local version for testing, follow the instructions [here](README.md#build-instructions).
+
 ## Style
 
 Follow the styles already set in the existing files if not listed below.
