@@ -18,7 +18,7 @@
 
 .tabLabel {
   width: auto;
-  color: #CE112D;
+  color: #f56a00;
   font-weight: normal;
   cursor: pointer;
   border-bottom: 2px solid transparent;
@@ -38,7 +38,7 @@
 .tabInput:target + .tabLabel,
 .tabInput:checked + .tabLabel {
   background: white;
-  border-bottom-color: #CE112D;
+  border-bottom-color: #f56a00;
   color: #55595c;
 }
 
